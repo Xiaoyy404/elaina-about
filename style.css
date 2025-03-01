@@ -1,0 +1,374 @@
+:root {
+  --primary-color: #2e1a47; /* Ungu gelap, penuh misteri */
+  --accent-color: #a9b7c6; /* Biru keperakan, seperti sinar bulan */
+  --text-color: #ffffff; /* Putih bersih, tetap kontras */
+  --background-color: #0a0f23; /* Biru gelap pekat, menambah kesan magis */
+}
+
+/*
+
+
+
+
+
+OWNER: BY FAUZIALIFATAH
+AKU PEMULAH MANA BISA KEK KALIAN
+
+SOSMED:
+YOUTUBE: https://www.youtube.com/@Fauzialifatah
+SALURAN INFORMASI: https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z
+
+
+
+
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+  z-index: 9999;
+}
+
+.cursor.clicked {
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: var(--accent-color);
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 4rem 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #8892b0;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+/* About Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-image {
+  position: relative;
+  opacity: 0;
+  transform: translateX(-50px) rotate(-10deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-image.animate {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  transform: translate(10px, 10px);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.about-image:hover::after {
+  transform: translate(5px, 5px);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: #8892b0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.stat-label {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+/*
+
+
+
+
+
+OWNER: BY FAUZIALIFATAH
+AKU PEMULAH MANA BISA KEK KALIAN
+
+SOSMED:
+YOUTUBE: https://www.youtube.com/@Fauzialifatah
+SALURAN INFORMASI: https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z
+
+
+
+
+
+*/
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  color: #8892b0;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-tag {
+  background-color: rgba(100, 255, 218, 0.1);
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+/*
+
+
+
+
+
+OWNER: BY FAUZIALIFATAH
+AKU PEMULAH MANA BISA KEK KALIAN
+
+SOSMED:
+YOUTUBE: https://www.youtube.com/@Fauzialifatah
+SALURAN INFORMASI: https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z
+
+
+
+
+
+*/
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+}
+
+li {
+  color: #8892b0; /* Sama dengan about-text p */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.2rem; /* Sama dengan p */
+  list-style: none; /* Menghilangkan bullet point jika tidak diperlukan */
+}
+
+ul {
+  padding-left: 0; /* Menghilangkan padding default dari ul */
+}
+
+ul li::before {
+  content: "• "; /* Menambahkan bullet point manual */
+  color: var(--accent-color);
+  font-weight: bold;
+}
